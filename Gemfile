@@ -5,8 +5,15 @@ source "http://rubygems.org"
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
+#
+
+gem 'rest-client'
+gem 'nori'
+
 group :development do
   gem "rspec"
+  gem "vcr"
+  gem "webmock", "1.15"
   gem "bundler"
   gem "jeweler", "~> 2.0.0"
 end

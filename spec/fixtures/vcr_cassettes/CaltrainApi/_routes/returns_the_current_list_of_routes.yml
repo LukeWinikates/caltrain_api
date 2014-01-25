@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://services.my511.org/Transit2.0/GetRoutesForAgency.aspx?agencyName=Caltrain
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 25 Jan 2014 22:46:11 GMT
+      Server:
+      - Microsoft-IIS/6.0
+      X-Powered-By:
+      - ASP.NET
+      X-Aspnet-Version:
+      - 4.0.30319
+      Cache-Control:
+      - private
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '1340'
+    body:
+      encoding: UTF-8
+      string: "<RTT>\r\n<AgencyList>\r\n<Agency Name=\"Caltrain\" HasDirection=\"True\"
+        Mode=\"Rail\">\r\n<RouteList>\r\n<Route Name=\"BABY BULLET\" Code=\"BABY BULLET\">\r\n<RouteDirectionList>\r\n<RouteDirection
+        Code=\"NB\" Name=\"NORTHBOUND TO SAN FRANCISCO\">\r\n</RouteDirection>\r\n\r\n<RouteDirection
+        Code=\"SB1\" Name=\"SOUTHBOUND TO SAN JOSE DIRIDON\">\r\n</RouteDirection>\r\n\r\n<RouteDirection
+        Code=\"SB2\" Name=\"SOUTHBOUND TO TAMIEN\">\r\n</RouteDirection>\r\n\r\n</RouteDirectionList>\r\n</Route>\r\n\r\n<Route
+        Name=\"LIMITED\" Code=\"LIMITED\">\r\n<RouteDirectionList>\r\n<RouteDirection
+        Code=\"NB\" Name=\"NORTHBOUND TO SAN FRANCISCO\">\r\n</RouteDirection>\r\n\r\n<RouteDirection
+        Code=\"SB3\" Name=\"SOUTHBOUND TO GILROY\">\r\n</RouteDirection>\r\n\r\n<RouteDirection
+        Code=\"SB1\" Name=\"SOUTHBOUND TO SAN JOSE DIRIDON\">\r\n</RouteDirection>\r\n\r\n<RouteDirection
+        Code=\"SB2\" Name=\"SOUTHBOUND TO TAMIEN\">\r\n</RouteDirection>\r\n\r\n</RouteDirectionList>\r\n</Route>\r\n\r\n<Route
+        Name=\"LOCAL\" Code=\"LOCAL\">\r\n<RouteDirectionList>\r\n<RouteDirection
+        Code=\"NB\" Name=\"NORTHBOUND TO SAN FRANCISCO\">\r\n</RouteDirection>\r\n\r\n<RouteDirection
+        Code=\"SB3\" Name=\"SOUTHBOUND TO GILROY\">\r\n</RouteDirection>\r\n\r\n<RouteDirection
+        Code=\"SB1\" Name=\"SOUTHBOUND TO SAN JOSE DIRIDON\">\r\n</RouteDirection>\r\n\r\n<RouteDirection
+        Code=\"SB2\" Name=\"SOUTHBOUND TO TAMIEN\">\r\n</RouteDirection>\r\n\r\n</RouteDirectionList>\r\n</Route>\r\n\r\n</RouteList>\r\n</Agency>\r\n\r\n</AgencyList>\r\n</RTT>\r\n"
+    http_version: 
+  recorded_at: Sat, 25 Jan 2014 22:46:13 GMT
+recorded_with: VCR 2.8.0
