@@ -20,6 +20,25 @@ module CaltrainApi
       end
     end
 
+
+    def departures_for_stop(stop)
+      params = {
+        :token => auth_token,
+        :agencyName => "Caltrain",
+        :stopName => stop
+      }
+      RestClient.get("services.my511.org/Transit2.0/GetNextDeparturesByStopName.aspx", :params => params) do |response, request|
+        noko = Nokogiri::XML.parse response
+        noko.css('DepartureTime').map do |departure_time|
+          {
+            :time_to_departure => departure_time.text,
+            :route_direction_code => departure_time.ancestors('RouteDirection')[0].attribute('Code').value,
+            :route_code => departure_time.ancestors('Route')[0].attribute('Code').value
+          }
+        end
+      end
+    end
+
     def auth_token
       self.class.configuration[:auth_token]
     end
