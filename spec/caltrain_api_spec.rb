@@ -32,4 +32,41 @@ describe "CaltrainApi", :vcr => true do
       ]
     end
   end
+
+  describe "#all_stops" do
+    it "returns all the stops as a list of strings" do
+      all_stops = caltrain.all_stops
+      expect(all_stops).to eq [
+        "San Francisco Caltrain Station",
+        "22nd Street Caltrain Station",
+        "Bayshore Caltrain Station",
+        "So San Francisco Caltrain Station",
+        "San Bruno Caltrain Station",
+        "Millbrae Caltrain Station",
+        "Burlingame Caltrain Station",
+        "San Mateo Caltrain Station",
+        "Hayward Park Caltrain Station",
+        "Hillsdale Caltrain Station",
+        "Belmont Caltrain Station",
+        "San Carlos Caltrain Station",
+        "Redwood City Caltrain Station",
+        "Menlo Park Caltrain Station",
+        "Palo Alto Caltrain Station",
+        "California Ave Caltrain Station",
+        "San Antonio Caltrain Station",
+        "Mountain View Caltrain Station",
+        "Sunnyvale Caltrain Station",
+        "Lawrence Caltrain Station",
+        "Santa Clara Caltrain Station",
+        "College Park Caltrain Station",
+        "San Jose Diridon Caltrain Station",
+        "Tamien Caltrain Station",
+        "Capitol Caltrain Station",
+        "Blossom Hill Caltrain Station",
+        "Morgan Hill Caltrain Station",
+        "San Martin Caltrain Station",
+        "Gilroy Caltrain Station"
+      ]
+    end
+  end
 end

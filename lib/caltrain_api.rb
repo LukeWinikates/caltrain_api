@@ -39,6 +39,19 @@ module CaltrainApi
       end
     end
 
+    def all_stops
+      params = {
+        :token => auth_token,
+        :routeIdf => all_idfs.join("|")
+      }
+      RestClient.get("services.my511.org/Transit2.0/GetStopsForRoutes.aspx", :params => params) do |response, request|
+        noko = Nokogiri::XML.parse response
+        noko.css('Stop').map do |stop|
+          stop.attribute('name').value
+        end.uniq
+      end
+    end
+
     def auth_token
       self.class.configuration[:auth_token]
     end
@@ -49,6 +62,19 @@ module CaltrainApi
 
     def self.configuration
       @@configuration ||= {}
+    end
+
+    private
+
+    def all_idfs
+      ["LOCAL", "LIMITED"].map do |route|
+        ["NB", "SB1", "SB2", "SB3"].map do |route_direction|
+          "Caltrain~#{route}~#{route_direction}"
+        end
+      end +
+      ["NB", "SB1", "SB2"].map do |route_direction|
+        "Caltrain~BABY BULLET~#{route_direction}"
+      end
     end
   end
 end
