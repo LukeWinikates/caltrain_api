@@ -5,16 +5,20 @@
 
 Gem::Specification.new do |s|
   s.name = "caltrain_api"
-  s.version = "0.0.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Luke Winikates"]
   s.date = "2014-01-29"
   s.description = "Get Realtime Caltrain status from the 511.org API "
   s.email = "luke.winikates@gmail.com"
+  s.extra_rdoc_files = [
+    "README.md"
+  ]
   s.files = [
     ".rspec",
     "Gemfile",
+    "README.md",
     "Rakefile",
     "VERSION",
     "caltrain_api.gemspec",
