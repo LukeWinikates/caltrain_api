@@ -9,6 +9,7 @@ source "http://rubygems.org"
 
 gem 'rest-client'
 gem 'nori'
+gem 'nokogiri'
 
 group :development do
   gem "rspec"
