@@ -20,6 +20,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Get Realtime Caltrain status from the 511.org API }
   gem.email = "luke.winikates@gmail.com"
   gem.authors = ["Luke Winikates"]
+  gem.files.exclude("spec/**/*")
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
