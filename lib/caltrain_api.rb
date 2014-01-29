@@ -1,4 +1,5 @@
 require 'rest_client'
+require 'nokogiri'
 require 'nori'
 
 module CaltrainApi
